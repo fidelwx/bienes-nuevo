@@ -14,8 +14,9 @@ class CreateTypesTable extends Migration
     public function up()
     {
         Schema::create('types', function (Blueprint $table) {
-            $table->string('code')->unique();
-            $table->primary('code');
+            $table->string('code');
+            // $table->string('code')->unique();
+            // $table->primary('code');
             $table->string('cod_category');
             $table->string('description');
             $table->integer('depreciation');
