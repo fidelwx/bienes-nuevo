@@ -64,9 +64,6 @@ class Kernel extends HttpKernel
 
         'role' => \Caffeinated\Shinobi\Middleware\UserHasRole::class,
         'permission' => \Caffeinated\Shinobi\Middleware\UserHasPermission::class,
-
-        'Admin' => \App\Http\Middleware\Admin::class,
-        'Compras' => \App\Http\Middleware\Compras::class,
     ];
 
     /**

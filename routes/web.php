@@ -10,7 +10,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Rutas
-/*
+
 Route::middleware(['auth'])->group(function (){
 	//roles
 	Route::post('roles/crear', 'RoleController@store')->name('roles.store')
@@ -41,20 +41,21 @@ Route::middleware(['auth'])->group(function (){
 
 	Route::get('bienes', 'BelongingsController@index')->name('bienes.index')
 			->middleware('permission:bienes.index');
+	Route::get('bien','BelongingsController@all');
 
 	Route::get('bienes/create', 'BelongingsController@create')->name('bienes.create')
 			->middleware('permission:bienes.create');
 
-	Route::put('bienes/{role}', 'BelongingsController@update')->name('bienes.update')
+	Route::put('bienes/{id}', 'BelongingsController@update')->name('bienes.update')
 			->middleware('permission:bienes.edit');
 
-	Route::get('bienes/{role}', 'BelongingsController@show')->name('bienes.show')
+	Route::get('bienes/{id}', 'BelongingsController@show')->name('bienes.show')
 			->middleware('permission:bienes.show');
 
-	Route::delete('bienes/{role}', 'BelongingsController@destroy')->name('bienes.destroy')
+	Route::delete('bienes/{id}', 'BelongingsController@destroy')->name('bienes.destroy')
 			->middleware('permission:bienes.destroy');
 
-	Route::get('bienes/{role}/edit', 'BelongingsController@edit')->name('bienes.edit')
+	Route::get('bienes/{id}/edit', 'BelongingsController@edit')->name('bienes.edit')
 			->middleware('permission:bienes.edit');
 
 
@@ -64,6 +65,7 @@ Route::middleware(['auth'])->group(function (){
 
 	Route::get('usuarios', 'UserController@index')->name('usuarios.index')
 			->middleware('permission:usuarios.index');
+	Route::get('usuario','UserController@all');
 
 	Route::get('usuarios/create', 'UserController@create')->name('usuarios.create')
 			->middleware('permission:usuarios.create');
@@ -80,32 +82,15 @@ Route::middleware(['auth'])->group(function (){
 	Route::get('usuarios/{role}/edit', 'UserController@edit')->name('usuarios.edit')
 			->middleware('permission:usuarios.edit');
 });
+
+/*
+	Route::resource('categorias','BelongingsController');
+	Route::get('categoria','BelongingsController@all');
+
+	Route::resource('tipos','BelongingsController');
+	Route::get('tipo','BelongingsController@all');
+
+	Route::resource('dependencias','BelongingsController');
+	Route::get('dependencia','BelongingsController@all');
+
 */
-
-Route::group(['middleware' => ['auth']], function (){
-	
-	Route::group(['middleware' => ['Compras']], function (){
-		Route::resource('bienes','BelongingsController');
-		Route::get('bien','BelongingsController@all');
-	});
-
-	Route::group(['middleware' => ['Admin']], function (){
-		Route::resource('usuarios','UserController');
-		Route::get('usuario','UserController@all');
-
-		Route::resource('bienes','BelongingsController');
-		Route::get('bien','BelongingsController@all');
-
-		Route::resource('categorias','BelongingsController');
-		Route::get('categoria','BelongingsController@all');
-
-		Route::resource('tipos','BelongingsController');
-		Route::get('tipo','BelongingsController@all');
-
-		Route::resource('dependencias','BelongingsController');
-		Route::get('dependencia','BelongingsController@all');
-	});
-	
-});
-
-

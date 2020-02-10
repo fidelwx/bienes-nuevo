@@ -17,7 +17,7 @@ class BelongingsController extends Controller
 
     public function all()
     {
-        $bienes = Belonging::select('category_id', 'type_id', 'dependence_id', 'correlative','complete_code', 'description', 'purchase_date', 'quantity', 'purchase_order', 'serial', 'origin', 'price')->get();
+        $bienes = Belonging::select('id','category_id', 'type_id', 'dependence_id', 'correlative','complete_code', 'description', 'purchase_date', 'quantity', 'purchase_order', 'serial', 'origin', 'price')->get();
         $bienes = ['data'=>$bienes];
         return $bienes;
     }
