@@ -18,6 +18,10 @@
             </div>
             </div>
         </div>
+        <div class="jumbotron text-center my-4">
+            <h1 class="display-4">Universidad Nacional Experimental Rómulo Gallegos</h1>
+            <h3 class="h3 mt-4">Sistema de control y manejo de Bienes.</h3>
+        </div>
     </div>
 </div>
 @endsection

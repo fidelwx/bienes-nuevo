@@ -27,7 +27,7 @@ class BelongingsController extends Controller
         $tcategorias = Category::all();
         $ttipos = Type::all();
         $tdependencias = Dependence::all();
-        return view('bienes.create',compact('tcategorias','ttipos','tdependencias'));
+        return view('bienes.create',compact('tcategorias','ttipos','tdependencias'));  
     }
 
     public function store(Request $request)

@@ -6,7 +6,7 @@
 	<h2>Nuevo Bien</h2>
 	<div class="card-body">
         <form id="my_form" method="post">
-        {{ csrf_field() }}>
+        {{ csrf_field() }}
             <div class="row mb-4">
                 <div class="col">
                     <select class="browser-default custom-select" name="category_id" id="category_id">
@@ -93,8 +93,8 @@
     });
 
     function codigo(e){
-    	console.log(category_id.value)
-    	$('#complete_code').val(`${category_id.value}-${type_id.value}-${dependence_id.value}-${correlative.value}`);
+    	console.log('0' + category_id.value)
+    	$('#complete_code').val(`${'0' + category_id.value}-${type_id.value}-${dependence_id.value}-${correlative.value}`);
     }
 
 	$("#guardar").on("click",function(event){

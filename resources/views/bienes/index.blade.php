@@ -5,10 +5,10 @@
 <div class="container">
 	<h2>Bienes</h2>
 	@can('bienes.create')
-	<a class="btn btn-info pull-right" href="{{ route('bienes.create') }}">
-        <i class="fas fa-fw fa-upload"></i>
-        <span class="mx-1">Cargar nuevo Bien</span>
-    </a>
+		<a class="btn btn-info pull-right" href="{{ route('bienes.create') }}">
+	        <i class="fas fa-fw fa-upload"></i>
+	        <span class="mx-1">Cargar nuevo Bien</span>
+	    </a>
     @endcan
     <table class="table table-bordered pull-left" id="tb">
        <thead>
